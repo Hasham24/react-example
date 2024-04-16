@@ -1,0 +1,20 @@
+.nav {
+  display: flex;
+  background-color: #21222a;
+  padding: 10px 20px 10px 20px;
+  align-items: center;
+}
+.navLogo {
+  width: 60px;
+}
+.navHeader {
+  color: #61dafb;
+  font-size: 22.5px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.navHeading {
+  color: #deebf8;
+  font-size: 16px;
+  margin-left: auto;
+}

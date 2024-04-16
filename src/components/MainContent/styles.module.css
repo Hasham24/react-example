@@ -1,0 +1,19 @@
+.container {
+  padding: 57px 27px;
+  background-color: #282D35;;
+}
+.heading {
+  font-size: 39;
+  color: #fff;
+}
+.contentItems {
+  color: #fff;
+}
+.contentItems > li {
+  line-height: 19px;
+  padding-block: 10px;
+}
+.contentItems > li::marker {
+  font-size: 1.4rem;
+  color: #61dafb;
+}
