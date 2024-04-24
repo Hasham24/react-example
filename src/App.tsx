@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { LeftComponent } from "./components";
+import { AccountType, SignUp } from "./containers";
 import "./App.css";
-import { AccountType } from "./containers";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <LeftComponent />
       <Routes>
         <Route path="/" element={<AccountType />} />
+        <Route path="/signUp" element={<SignUp />} />
       </Routes>
     </div>
   );

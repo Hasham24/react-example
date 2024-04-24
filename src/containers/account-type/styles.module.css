@@ -37,3 +37,7 @@
     font-family: 'interRegular';
     color: #8692a6;
 }
+.textLink {
+  color: inherit;
+  text-decoration: inherit;
+}

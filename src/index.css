@@ -13,7 +13,7 @@ code {
 }
 @font-face {
   font-family: interBlack;
-  src: local('interBold'), url('./fonts/Inter-Black.ttf') format(trueType);
+  src: local('interBlack'), url('./fonts/Inter-Black.ttf') format(trueType);
 }
 @font-face {
   font-family: interBold;
