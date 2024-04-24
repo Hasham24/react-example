@@ -1,19 +1,16 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Routes, Route } from "react-router-dom";
 import { LeftComponent } from "./components";
 import "./App.css";
+import { AccountType } from "./containers";
 
 function App() {
   return (
     <div className="App">
       <LeftComponent />
-      <div
-        style={{
-          flex: 1,
-        }}
-      >
-        <p>right</p>
-      </div>
+      <Routes>
+        <Route path="/" element={<AccountType />} />
+      </Routes>
     </div>
   );
 }

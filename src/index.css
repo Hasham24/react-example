@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: interBlack;
+  src: local('interBold'), url('./fonts/Inter-Black.ttf') format(trueType);
+}
+@font-face {
+  font-family: interBold;
+  src: local('interBold'), url('./fonts/Inter-Bold.ttf') format(trueType);
+}
+@font-face {
+  font-family: interExtraBold;
+  src: local('interExtraBold'), url('./fonts/Inter-ExtraBold.ttf') format(trueType);
+}
+@font-face {
+  font-family: interExtraLight;
+  src: local('interExtraLight'), url('./fonts/Inter-ExtraLight.ttf') format(trueType);
+}
+@font-face {
+  font-family: interLight;
+  src: local('interLight'), url('./fonts/Inter-Light.ttf') format(trueType);
+}
+@font-face {
+  font-family: interMedium;
+  src: local('interMedium'), url('./fonts/Inter-Medium.ttf') format(trueType);
+}
+@font-face {
+  font-family: interRegular;
+  src: local('interRegular'), url('./fonts/Inter-Regular.ttf') format(trueType);
+}
+@font-face {
+  font-family: interSemiBold;
+  src: local('interSemiBold'), url('./fonts/Inter-SemiBold.ttf') format(trueType);
+}
+@font-face {
+  font-family: interThin;
+  src: local('interThin'), url('./fonts/Inter-Thin.ttf') format(trueType);
+}

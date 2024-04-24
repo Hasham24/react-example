@@ -1,6 +1,8 @@
 .leftComponent {
   flex:1;
+  overflow: hidden;
   height: 100vh; 
+  background-color: pink;
   background-image: url('../../assets/images/bg.png');
   background-size: contain;
   background-attachment: fixed;

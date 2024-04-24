@@ -1,0 +1,39 @@
+.container {
+  flex: 1;
+  padding: 20px;
+}
+.alreadyAccount {
+  text-align: right;
+  font-family: "interRegular";
+  margin-right: 50px;
+  font-size: 18px;
+  color: #8692a6;
+}
+.signInButton {
+  font-family: "interRegular";
+  padding: 0px;
+  border-width: 0px;
+  background-color: #fff;
+  font-size: 18px;
+  color: #1565d8;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 100px 0px 100px;
+  height: 100vh;
+}
+.joinUs {
+  font-size: 30px;
+  margin: 0px;
+  font-family: "interBold";
+  color: #000000;
+}
+.description {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 28px;
+    font-family: 'interRegular';
+    color: #8692a6;
+}
