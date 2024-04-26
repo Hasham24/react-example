@@ -2,3 +2,32 @@
   flex: 1;
   padding: 20px;
 }
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 80px 0px 80px;
+}
+.description {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 28px;
+  font-family: "interRegular";
+  color: #8692a6;
+}
+.orContainer {
+  margin-top: 10px;
+  max-width: 426px;
+  display: flex;
+}
+.line {
+  border: none;
+  flex: 1;
+  height: 1px;
+}
+.or {
+  margin-inline: 10px;
+}
+.icon {
+  /* position: absolute; */
+}

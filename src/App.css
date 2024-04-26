@@ -1,6 +1,6 @@
 .App {
- display: flex;
- justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .App-logo {
@@ -13,7 +13,13 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.description {
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 28px;
+  font-family: "interRegular";
+  color: #8692a6;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

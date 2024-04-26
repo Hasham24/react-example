@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { VscGift } from "react-icons/vsc";
 import { FiUser } from "react-icons/fi";
 import styles from "./styles.module.css";
-import { JoinTypeButton } from "../../components";
+import { Heading, JoinTypeButton } from "../../components";
 
 const AccountType: React.FC<any> = (props) => {
   const [selectedType, setSelectedType] = useState<number>(0);
@@ -21,7 +21,7 @@ const AccountType: React.FC<any> = (props) => {
         </p>
       </Link>
       <div className={styles.body}>
-        <p className={styles.joinUs}>Join Us!</p>
+      <Heading title="Join Us!" />
         <p className={styles.description}>
           To begin this journey, tell us what type of
           <br />
