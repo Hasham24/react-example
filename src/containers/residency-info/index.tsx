@@ -1,18 +1,17 @@
-import React, {useEffect} from "react";
-import styles from "./styles.module.css";
+import React from "react";
+import { MdLockOutline } from "react-icons/md";
 import {
   Button,
-  SocialButton,
-  CheckBox,
+  CountrySelect,
   Header,
   Heading,
+  PhoneInput,
   TextInput,
 } from "../../components";
-
+import useResidency from "./useResidency";
+import styles from "./styles.module.css";
 const ResidencyInfo: React.FC<any> = (props) => {
-useEffect(() => {
-  console.log('first')
-}, [])
+  const { phoneNumber, setPhoneNumber } = useResidency();
 
   return (
     <div className={styles.container}>
@@ -24,6 +23,18 @@ useEffect(() => {
           <br />
           details are required.
         </p>
+        <PhoneInput
+          value={phoneNumber}
+          label="Phone number"
+          onChange={(val: any) => setPhoneNumber(val)}
+        />
+        <TextInput label="Your address" placeholder="Please enter address" />
+        <CountrySelect label="Country of residence" />
+        <Button title="Save & Continue" />
+        <div className={styles.infoDescription}>
+          <MdLockOutline size={12} color={"#8692A6"} />
+          <small className={styles.infoDescriptionText}>Your Info is safely secured</small>
+        </div>
       </div>
     </div>
   );

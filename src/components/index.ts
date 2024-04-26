@@ -3,3 +3,4 @@ export * from "./Buttons";
 export * from "./Headers";
 export * from "./Texts";
 export * from "./Input";
+export * from './Selectors'

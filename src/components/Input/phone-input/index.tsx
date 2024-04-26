@@ -1,41 +1,28 @@
-import React, { InputHTMLAttributes, useState } from "react";
+import React, { InputHTMLAttributes } from "react";
+import PhoneTextInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import styles from "./styles.module.css";
 interface IProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
-  id: string;
-  name: string;
-  type: string;
-  placeholder: string;
+  value: string;
 }
-const TextInput: React.FC<IProps> = (props) => {
-  const { label, id, name, placeholder, type, ...rest } = props;
-  const [inputType, setInputType] = useState<string>(type);
-  const showPassword = () => {
-    if (inputType === "text") {
-      return setInputType("password");
-    }
-    setInputType("text");
+const PhoneInput: React.FC<IProps> = (props) => {
+  const { label, value, placeholder, onChange = () => undefined } = props;
+  const handleChange = (event: any) => {
+    onChange(event);
   };
   return (
     <div className={styles.container}>
       <label className={styles.label}>{label}</label>
       <br />
-      <div className={styles.inputContainer}>
-        <input
-          {...rest}
-          className={styles.input}
-          type={inputType}
-          id={id}
-          name={name}
-          placeholder={placeholder}
-        />
-        {type === "password" && (
-          <button type="button" onClick={showPassword} className={styles.button}>
-            show
-          </button>
-        )}
-      </div>
+      <PhoneTextInput
+        className={styles.inputContainer}
+        defaultCountry="PK"
+        placeholder={placeholder}
+        value={value}
+        onChange={(val) => handleChange(val)}
+      />
     </div>
   );
 };
-export default TextInput;
+export default PhoneInput;
