@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { LeftComponent } from "./components";
-import { AccountType, SignUp } from "./containers";
+import { AccountType, SignUp, ResidencyInfo } from "./containers";
 import "./App.css";
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AccountType />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/residency-info" element={<ResidencyInfo />} />
       </Routes>
     </div>
   );

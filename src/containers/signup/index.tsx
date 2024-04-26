@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import styles from "./styles.module.css";
 import {
@@ -10,10 +11,12 @@ import {
   TextInput,
 } from "../../components";
 
-const SignUP: React.FC<any> = (props) => {
+const SignUP: React.FC = () => {
+  const navigate = useNavigate();
   const handleSubmit = (event: any) => {
+   
     event.preventDefault();
-    alert(`The name you entered was: `);
+    navigate('/residency-info')
   };
 
   return (

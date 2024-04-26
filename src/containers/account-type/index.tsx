@@ -12,16 +12,11 @@ const AccountType: React.FC<any> = (props) => {
       <Link to={"/signUp"} className={styles.textLink}>
         <p className={styles.alreadyAccount}>
           Already have an account?{" "}
-          <button
-            className={styles.signInButton}
-            onClick={() => console.log("first")}
-          >
-            Sign In
-          </button>
+          <button className={styles.signInButton}>Sign In</button>
         </p>
       </Link>
       <div className={styles.body}>
-      <Heading title="Join Us!" />
+        <Heading title="Join Us!" />
         <p className={styles.description}>
           To begin this journey, tell us what type of
           <br />
