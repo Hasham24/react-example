@@ -1,0 +1,13 @@
+.infoDescription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 426px;
+    margin-top: 20px;
+  }
+  .infoDescriptionText{
+    font-family: "interRegular";
+    margin-inline: 5px;
+    font-size: 12px;
+    color: #8692A6;
+  }

@@ -8,23 +8,3 @@
   justify-content: center;
   padding: 20px 80px 0px 80px;
 }
-.description {
-  margin-top: 10px;
-  font-size: 15px;
-  line-height: 28px;
-  font-family: "interRegular";
-  color: #8692a6;
-}
-.infoDescription {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 426px;
-  margin-top: 20px;
-}
-.infoDescriptionText{
-  font-family: "interRegular";
-  margin-inline: 5px;
-  font-size: 12px;
-  color: #8692A6;
-}

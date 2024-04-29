@@ -1,11 +1,12 @@
 import React from "react";
-import { MdLockOutline } from "react-icons/md";
 import {
+  AuthDescription,
   Button,
   CountrySelect,
   Header,
   Heading,
   PhoneInput,
+  SecuredText,
   TextInput,
 } from "../../components";
 import useResidency from "./useResidency";
@@ -18,11 +19,7 @@ const ResidencyInfo: React.FC<any> = (props) => {
       <Header title="Personal Info." step={1} />
       <div className={styles.body}>
         <Heading title="Register Individual Account!" />
-        <p className={styles.description}>
-          For the purpose of industry regulation, your
-          <br />
-          details are required.
-        </p>
+        <AuthDescription title="For the purpose of industry regulation, your details are required." />
         <PhoneInput
           value={phoneNumber}
           label="Phone number"
@@ -31,10 +28,7 @@ const ResidencyInfo: React.FC<any> = (props) => {
         <TextInput label="Your address" placeholder="Please enter address" />
         <CountrySelect label="Country of residence" />
         <Button title="Save & Continue" />
-        <div className={styles.infoDescription}>
-          <MdLockOutline size={12} color={"#8692A6"} />
-          <small className={styles.infoDescriptionText}>Your Info is safely secured</small>
-        </div>
+        <SecuredText />
       </div>
     </div>
   );

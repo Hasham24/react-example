@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { VscGift } from "react-icons/vsc";
 import { FiUser } from "react-icons/fi";
 import styles from "./styles.module.css";
-import { Heading, JoinTypeButton } from "../../components";
+import { AuthDescription, Heading, JoinTypeButton } from "../../components";
 
 const AccountType: React.FC<any> = (props) => {
   const [selectedType, setSelectedType] = useState<number>(0);
@@ -17,11 +17,7 @@ const AccountType: React.FC<any> = (props) => {
       </Link>
       <div className={styles.body}>
         <Heading title="Join Us!" />
-        <p className={styles.description}>
-          To begin this journey, tell us what type of
-          <br />
-          account you’d be opening.
-        </p>
+        <AuthDescription title="To begin this journey, tell us what type of account you’d be opening." /> 
         <JoinTypeButton
           Icon={<FiUser color={selectedType === 0 ? "#fff" : "#1565d8"} />}
           title="Individual"

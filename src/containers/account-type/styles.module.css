@@ -24,13 +24,6 @@
   padding: 0px 100px 0px 100px;
   height: 100vh;
 }
-.description {
-    margin-top: 10px;
-    font-size: 18px;
-    line-height: 28px;
-    font-family: 'interRegular';
-    color: #8692a6;
-}
 .textLink {
   color: inherit;
   text-decoration: inherit;

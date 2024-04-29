@@ -9,6 +9,7 @@ import {
   Header,
   Heading,
   TextInput,
+  AuthDescription,
 } from "../../components";
 
 const SignUP: React.FC = () => {
@@ -24,11 +25,7 @@ const SignUP: React.FC = () => {
       <Header title="Personal Info." step={1} />
       <div className={styles.body}>
         <Heading title="Register Individual Account!" />
-        <p className={styles.description}>
-          For the purpose of industry regulation, your
-          <br />
-          details are required.
-        </p>
+        <AuthDescription title="For the purpose of industry regulation, your details are required." />
         <form onSubmit={handleSubmit}>
           <TextInput
             label={"Your fullName*"}
