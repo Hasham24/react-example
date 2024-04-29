@@ -2,9 +2,18 @@ import React, { InputHTMLAttributes, useState } from "react";
 import styles from "./styles.module.css";
 interface IProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
+  Icon?: JSX.Element;
 }
 const TextInput: React.FC<IProps> = (props) => {
-  const { label, id, name, placeholder, type = "", ...rest } = props;
+  const {
+    label,
+    id,
+    name,
+    placeholder,
+    type = "",
+    Icon = null,
+    ...rest
+  } = props;
   const [inputType, setInputType] = useState<string>(type);
   const showPassword = () => {
     if (inputType === "text") {
@@ -34,6 +43,7 @@ const TextInput: React.FC<IProps> = (props) => {
             show
           </button>
         )}
+        {Icon}
       </div>
     </div>
   );

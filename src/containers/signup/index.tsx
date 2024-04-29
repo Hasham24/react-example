@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import styles from "./styles.module.css";
 import {
   Button,
   SocialButton,
@@ -11,11 +10,10 @@ import {
   TextInput,
   AuthDescription,
 } from "../../components";
-
+import styles from "./styles.module.css";
 const SignUP: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (event: any) => {
-   
     event.preventDefault();
     navigate('/residency-info')
   };
