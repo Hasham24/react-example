@@ -19,6 +19,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+input:-webkit-autofill {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
 .description {
   margin-top: 10px;
   font-size: 18px;

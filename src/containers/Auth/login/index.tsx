@@ -4,18 +4,18 @@ import { FcGoogle } from "react-icons/fc";
 import {
   Button,
   SocialButton,
-  CheckBox,
   Heading,
   TextInput,
   AuthDescription,
   OR,
+  TextButton,
 } from "../../../components";
 import styles from "./styles.module.css";
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    navigate("/residency-info");
+    navigate("/home");
   };
 
   return (
@@ -38,13 +38,15 @@ const Login: React.FC = () => {
             name={"password"}
             placeholder={"Enter Password"}
           />
-          <CheckBox />
+          <div className={styles.forgotPassword} onClick={() => navigate('/forgot-password')}>
+            Forgot Password
+          </div>
           <Button type="submit" title="Login" />
         </form>
-        <OR />
-        <SocialButton
-          title="Register with Google"
-          Icon={<FcGoogle className={styles.icon} />}
+        <TextButton
+          postfix="Sign Up"
+          prefix="Don’t have an account?"
+          onClick={() => navigate("/signUp")}
         />
       </div>
     </div>

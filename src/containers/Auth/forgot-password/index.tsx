@@ -4,8 +4,6 @@ import { FcGoogle } from "react-icons/fc";
 import {
   Button,
   SocialButton,
-  CheckBox,
-  Header,
   Heading,
   TextInput,
   AuthDescription,
@@ -13,7 +11,7 @@ import {
   TextButton,
 } from "../../../components";
 import styles from "./styles.module.css";
-const SignUP: React.FC = () => {
+const ForgotPassword: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (event: any) => {
     event.preventDefault();
@@ -22,34 +20,18 @@ const SignUP: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <Header title="Personal Info." step={1} />
       <div className={styles.body}>
-        <Heading title="Register Individual Account!" />
-        <AuthDescription title="For the purpose of industry regulation, your details are required." />
+        <Heading title="Forgot Password?" />
+        <AuthDescription title="Please enter the email you would like your password reset information sent to" />
         <form onSubmit={handleSubmit}>
           <TextInput
-            label={"Your fullName*"}
-            type={"text"}
-            id={"fullName"}
-            name={"fullName"}
-            placeholder={"Invictus Innocent"}
-          />
-          <TextInput
-            label={"Email address*"}
+            label={"Email"}
             type={"text"}
             id={"email"}
             name={"email"}
-            placeholder={"Enter email address"}
+            placeholder={"Enter email"}
           />
-          <TextInput
-            label={"Create password*"}
-            type={"password"}
-            id={"password"}
-            name={"password"}
-            placeholder={"Enter Password"}
-          />
-          <CheckBox />
-          <Button type="submit" title="Register Account" />
+          <Button type="submit" title="Request Reset Link" />
         </form>
         <OR />
         <SocialButton
@@ -57,12 +39,12 @@ const SignUP: React.FC = () => {
           Icon={<FcGoogle className={styles.icon} />}
         />
         <TextButton
-          postfix="Login"
-          prefix="Already have account?"
+          postfix="Back to Login"
+          prefix=""
           onClick={() => navigate("/login")}
         />
       </div>
     </div>
   );
 };
-export default SignUP;
+export default ForgotPassword;
