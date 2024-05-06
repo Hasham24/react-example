@@ -1,13 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 import {
   Button,
-  SocialButton,
   Heading,
   TextInput,
   AuthDescription,
-  OR,
   TextButton,
 } from "../../../components";
 import styles from "./styles.module.css";
@@ -38,7 +35,10 @@ const Login: React.FC = () => {
             name={"password"}
             placeholder={"Enter Password"}
           />
-          <div className={styles.forgotPassword} onClick={() => navigate('/forgot-password')}>
+          <div
+            className={styles.forgotPassword}
+            onClick={() => navigate("/forgot-password")}
+          >
             Forgot Password
           </div>
           <Button type="submit" title="Login" />
