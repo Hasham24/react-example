@@ -1,0 +1,13 @@
+.orContainer {
+    margin-top: 10px;
+    max-width: 426px;
+    display: flex;
+  }
+  .line {
+    border: none;
+    flex: 1;
+    height: 1px;
+  }
+  .or {
+    margin-inline: 10px;
+  }

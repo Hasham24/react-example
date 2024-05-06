@@ -1,8 +1,11 @@
 .App {
   display: flex;
 }
+.Auth-container {
+  display: flex;
+}
 @media (max-width: 768px) {
-  .App {
+  .Auth-container {
     flex-direction: column;
   }
 }

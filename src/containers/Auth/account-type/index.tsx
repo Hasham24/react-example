@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { VscGift } from "react-icons/vsc";
 import { FiUser } from "react-icons/fi";
-import { AuthDescription, Heading, JoinTypeButton } from "../../components";
+import { AuthDescription, Heading, JoinTypeButton } from "../../../components";
 import styles from "./styles.module.css";
 const AccountType: React.FC<any> = (props) => {
   const [selectedType, setSelectedType] = useState<number>(0);

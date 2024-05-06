@@ -7,7 +7,7 @@ import {
   Heading,
   SecuredText,
   TextInput,
-} from "../../components";
+} from "../../../components";
 import styles from "./styles.module.css";
 const ResidencyInfo: React.FC<any> = (props) => {
   return (

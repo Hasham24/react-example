@@ -9,7 +9,7 @@ import {
   PhoneInput,
   SecuredText,
   TextInput,
-} from "../../components";
+} from "../../../components";
 import useResidency from "./useResidency";
 import styles from "./styles.module.css";
 const ResidencyInfo: React.FC<any> = () => {

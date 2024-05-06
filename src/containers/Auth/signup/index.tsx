@@ -9,13 +9,14 @@ import {
   Heading,
   TextInput,
   AuthDescription,
-} from "../../components";
+  OR,
+} from "../../../components";
 import styles from "./styles.module.css";
 const SignUP: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    navigate('/residency-info')
+    navigate("/residency-info");
   };
 
   return (
@@ -49,11 +50,7 @@ const SignUP: React.FC = () => {
           <CheckBox />
           <Button type="submit" title="Register Account" />
         </form>
-        <div className={styles.orContainer}>
-          <hr color={"#F5F5F5"} className={styles.line} />
-          <label className={styles.or}>OR</label>
-          <hr color={"#F5F5F5"} className={styles.line} />
-        </div>
+        <OR />
         <SocialButton
           title="Register with Google"
           Icon={<FcGoogle className={styles.icon} />}
