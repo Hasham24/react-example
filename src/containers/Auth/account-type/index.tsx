@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 const AccountType: React.FC<any> = (props) => {
   const [selectedType, setSelectedType] = useState<number>(0);
   return (
-    <div className={styles.container}>
+    <div className={"auth-container"}>
       <Link to={"/signUp"} className={styles.textLink}>
         <p className={styles.alreadyAccount}>
           Already have an account?{" "}
@@ -16,7 +16,7 @@ const AccountType: React.FC<any> = (props) => {
       </Link>
       <div className={styles.body}>
         <Heading title="Join Us!" />
-        <AuthDescription title="To begin this journey, tell us what type of account you’d be opening." /> 
+        <AuthDescription title="To begin this journey, tell us what type of account you’d be opening." />
         <JoinTypeButton
           Icon={<FiUser color={selectedType === 0 ? "#fff" : "#1565d8"} />}
           title="Individual"

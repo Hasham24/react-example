@@ -8,12 +8,11 @@ import {
   SecuredText,
   TextInput,
 } from "../../../components";
-import styles from "./styles.module.css";
 const ResidencyInfo: React.FC<any> = (props) => {
   return (
-    <div className={styles.container}>
+    <div className={"auth-container"}>
       <Header title="Bank Verification" step={3} />
-      <div className={styles.body}>
+      <div className={"auth-body"}>
         <Heading title="Complete Your Profile!" />
         <AuthDescription title="For the purpose of industry regulation, your details are required." />
         <TextInput

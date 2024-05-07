@@ -10,7 +10,6 @@ import {
   OR,
   TextButton,
 } from "../../../components";
-import styles from "./styles.module.css";
 const ForgotPassword: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (event: any) => {
@@ -19,8 +18,8 @@ const ForgotPassword: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.body}>
+    <div className={"auth-container"}>
+      <div className={"auth-body"}>
         <Heading title="Forgot Password?" />
         <AuthDescription title="Please enter the email you would like your password reset information sent to" />
         <form onSubmit={handleSubmit}>
@@ -36,7 +35,7 @@ const ForgotPassword: React.FC = () => {
         <OR />
         <SocialButton
           title="Register with Google"
-          Icon={<FcGoogle className={styles.icon} />}
+          Icon={<FcGoogle />}
         />
         <TextButton
           postfix="Back to Login"

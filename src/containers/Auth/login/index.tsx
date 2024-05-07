@@ -16,8 +16,8 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.body}>
+    <div className={"auth-container"}>
+      <div className={"auth-body"}>
         <Heading title="Login" />
         <AuthDescription title="Please sign in to continue" />
         <form onSubmit={handleSubmit}>

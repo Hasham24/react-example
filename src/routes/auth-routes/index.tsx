@@ -11,7 +11,7 @@ import {
 import { LeftComponent } from "../../components";
 const AuthRoutes: React.FC = () => {
   return (
-    <div className="Auth-container">
+    <div className="auth-route-container">
       <LeftComponent />
       <Routes>
         <Route path="/" element={<AccountType />} />

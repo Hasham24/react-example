@@ -11,7 +11,6 @@ import {
   TextInput,
 } from "../../../components";
 import useResidency from "./useResidency";
-import styles from "./styles.module.css";
 const ResidencyInfo: React.FC<any> = () => {
   const { phoneNumber, setPhoneNumber } = useResidency();
   const navigate = useNavigate();
@@ -19,9 +18,9 @@ const ResidencyInfo: React.FC<any> = () => {
     navigate("/bank-info");
   };
   return (
-    <div className={styles.container}>
+    <div className={"auth-container"}>
       <Header title="Residency Info." step={2} />
-      <div className={styles.body}>
+      <div className={"auth-body"}>
         <Heading title="Register Individual Account!" />
         <AuthDescription title="For the purpose of industry regulation, your details are required." />
         <form onSubmit={handleSubmit}>

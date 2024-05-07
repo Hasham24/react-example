@@ -12,7 +12,6 @@ import {
   OR,
   TextButton,
 } from "../../../components";
-import styles from "./styles.module.css";
 const SignUP: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (event: any) => {
@@ -21,9 +20,9 @@ const SignUP: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={"auth-container"}>
       <Header title="Personal Info." step={1} />
-      <div className={styles.body}>
+      <div className={"auth-body"}>
         <Heading title="Register Individual Account!" />
         <AuthDescription title="For the purpose of industry regulation, your details are required." />
         <form onSubmit={handleSubmit}>
@@ -52,10 +51,7 @@ const SignUP: React.FC = () => {
           <Button type="submit" title="Register Account" />
         </form>
         <OR />
-        <SocialButton
-          title="Register with Google"
-          Icon={<FcGoogle className={styles.icon} />}
-        />
+        <SocialButton title="Register with Google" Icon={<FcGoogle />} />
         <TextButton
           postfix="Login"
           prefix="Already have account?"
