@@ -12,7 +12,7 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    navigate("/home");
+    navigate("/general");
   };
 
   return (
