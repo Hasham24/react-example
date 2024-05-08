@@ -12,7 +12,10 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    navigate("/general");
+    localStorage.setItem("isUserLoggedIn", JSON.stringify(true));
+    setTimeout(() => {
+      navigate("/general"); 
+    }, 100);
   };
 
   return (
