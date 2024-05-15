@@ -12,6 +12,7 @@ import {
   OR,
   TextButton,
 } from "../../../components";
+import { Box } from "@mui/material";
 const SignUP: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (event: any) => {
@@ -22,7 +23,14 @@ const SignUP: React.FC = () => {
   return (
     <div className={"auth-container"}>
       <Header title="Personal Info." step={1} />
-      <div className={"auth-body"}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: { lg: "0px 100px 0px 100px", md: "0px" },
+        }}
+      >
         <Heading title="Register Individual Account!" />
         <AuthDescription title="For the purpose of industry regulation, your details are required." />
         <form onSubmit={handleSubmit}>
@@ -57,7 +65,7 @@ const SignUP: React.FC = () => {
           prefix="Already have account?"
           onClick={() => navigate("/login")}
         />
-      </div>
+      </Box>
     </div>
   );
 };

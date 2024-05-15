@@ -13,8 +13,8 @@ const App: React.FC = () => {
   console.log(isUserLoggedIn);
   return (
     <>
-      {/* <Auth /> */}
-      <Settings />
+      <Auth />
+      {/* <Settings /> */}
       {/* : <Auth />} */}
       {/* Add a catch-all route for unmatched paths */}
       {/* <Route path="*" element={<NotFound />} /> */}
