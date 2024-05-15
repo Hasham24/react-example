@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { MdOutlineAnalytics, MdOutlineEmail } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import { SlLock } from "react-icons/sl";
 import { HiMiniSquare2Stack } from "react-icons/hi2";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
@@ -22,11 +23,62 @@ const DrawerComponent = (props: Props, ref: any) => {
   const { window } = props;
   const container =
     window !== undefined ? () => window().document.body : undefined;
+  const navigate = useNavigate();
   // local states
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [isClosing, setIsClosing] = useState<boolean>(false);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
+  // list data variable
+  const drawerData = [
+    {
+      title: "General",
+      route: "/",
+      icon: (
+        <HiMiniSquare2Stack
+          size={28}
+          color={selectedIndex === 0 ? "#FFFFFF" : "62618F"}
+        />
+      ),
+    },
+    {
+      title: "Security",
+      route: "/security",
+      icon: (
+        <SlLock size={28} color={selectedIndex === 1 ? "#FFFFFF" : "62618F"} />
+      ),
+    },
+    {
+      title: "Notifications",
+      route: "/notifications",
+      icon: (
+        <MdOutlineEmail
+          size={28}
+          color={selectedIndex === 2 ? "#FFFFFF" : "62618F"}
+        />
+      ),
+    },
+    {
+      title: "Billing",
+      route: "/billing",
+      icon: (
+        <FaRegMoneyBillAlt
+          size={28}
+          color={selectedIndex === 3 ? "#FFFFFF" : "62618F"}
+        />
+      ),
+    },
+    {
+      title: "Analytics",
+      route: "/analytics",
+      icon: (
+        <MdOutlineAnalytics
+          size={28}
+          color={selectedIndex === 4 ? "#FFFFFF" : "62618F"}
+        />
+      ),
+    },
+  ];
   // methods handling
   const handleDrawerClose = () => {
     setIsClosing(true);
@@ -43,51 +95,11 @@ const DrawerComponent = (props: Props, ref: any) => {
       }
     },
   }));
-  // list data variable
-  const drawerData = [
-    {
-      title: "General",
-      icon: (
-        <HiMiniSquare2Stack
-          size={28}
-          color={selectedIndex === 0 ? "#FFFFFF" : "62618F"}
-        />
-      ),
-    },
-    {
-      title: "Security",
-      icon: (
-        <SlLock size={28} color={selectedIndex === 1 ? "#FFFFFF" : "62618F"} />
-      ),
-    },
-    {
-      title: "Notifications",
-      icon: (
-        <MdOutlineEmail
-          size={28}
-          color={selectedIndex === 2 ? "#FFFFFF" : "62618F"}
-        />
-      ),
-    },
-    {
-      title: "Billing",
-      icon: (
-        <FaRegMoneyBillAlt
-          size={28}
-          color={selectedIndex === 3 ? "#FFFFFF" : "62618F"}
-        />
-      ),
-    },
-    {
-      title: "Analytics",
-      icon: (
-        <MdOutlineAnalytics
-          size={28}
-          color={selectedIndex === 4 ? "#FFFFFF" : "62618F"}
-        />
-      ),
-    },
-  ];
+
+  const drawerItemHandler = (index: number, route: string) => {
+    setSelectedIndex(index);
+    navigate(route);
+  };
 
   // drawer jsx
   const drawer = (
@@ -95,7 +107,7 @@ const DrawerComponent = (props: Props, ref: any) => {
       <Box
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
       >
-        <Avatar />
+        <Avatar/>
         <Box sx={{ marginLeft: "10px" }}>
           <Typography
             sx={{ color: "#1A194D", fontSize: "16px", fontFamily: "InterBold" }}
@@ -118,7 +130,7 @@ const DrawerComponent = (props: Props, ref: any) => {
           <ListItem
             key={String(index)}
             disablePadding
-            onClick={() => setSelectedIndex(index)}
+            onClick={() => drawerItemHandler(index, item?.route)}
             sx={{
               backgroundColor:
                 selectedIndex === index ? "#1565D8" : "transparent",
