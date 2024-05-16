@@ -1,4 +1,5 @@
 import React from "react";
+import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import {
   Button,
@@ -14,13 +15,20 @@ const Login: React.FC = () => {
     event.preventDefault();
     localStorage.setItem("isUserLoggedIn", JSON.stringify(true));
     setTimeout(() => {
-      navigate("/general"); 
+      navigate("/general");
     }, 100);
   };
 
   return (
     <div className={"auth-container"}>
-      <div className={"auth-body"}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: { lg: "0px 100px 0px 100px", md: "0px" },
+        }}
+      >
         <Heading title="Login" />
         <AuthDescription title="Please sign in to continue" />
         <form onSubmit={handleSubmit}>
@@ -51,7 +59,7 @@ const Login: React.FC = () => {
           prefix="Don’t have an account?"
           onClick={() => navigate("/signUp")}
         />
-      </div>
+      </Box>
     </div>
   );
 };

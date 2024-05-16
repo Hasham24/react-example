@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Box } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
 import {
   Button,
@@ -12,7 +13,7 @@ import {
   OR,
   TextButton,
 } from "../../../components";
-import { Box } from "@mui/material";
+
 const SignUP: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (event: any) => {
@@ -33,7 +34,16 @@ const SignUP: React.FC = () => {
       >
         <Heading title="Register Individual Account!" />
         <AuthDescription title="For the purpose of industry regulation, your details are required." />
-        <form onSubmit={handleSubmit}>
+        <Box
+          component="form"
+          onSubmit={handleSubmit}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+            mt: 2,
+          }}
+        >
           <TextInput
             label={"Your fullName*"}
             type={"text"}
@@ -57,7 +67,7 @@ const SignUP: React.FC = () => {
           />
           <CheckBox />
           <Button type="submit" title="Register Account" />
-        </form>
+        </Box>
         <OR />
         <SocialButton title="Register with Google" Icon={<FcGoogle />} />
         <TextButton

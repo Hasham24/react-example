@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Box } from "@mui/material";
 import {
   AuthDescription,
   Button,
@@ -11,6 +12,7 @@ import {
   TextInput,
 } from "../../../components";
 import useResidency from "./useResidency";
+
 const ResidencyInfo: React.FC<any> = () => {
   const { phoneNumber, setPhoneNumber } = useResidency();
   const navigate = useNavigate();
@@ -20,7 +22,14 @@ const ResidencyInfo: React.FC<any> = () => {
   return (
     <div className={"auth-container"}>
       <Header title="Residency Info." step={2} />
-      <div className={"auth-body"}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: { lg: "0px 100px 0px 100px", md: "0px" },
+        }}
+      >
         <Heading title="Register Individual Account!" />
         <AuthDescription title="For the purpose of industry regulation, your details are required." />
         <form onSubmit={handleSubmit}>
@@ -34,7 +43,7 @@ const ResidencyInfo: React.FC<any> = () => {
           <Button title="Save & Continue" type="submit" />
           <SecuredText />
         </form>
-      </div>
+      </Box>
     </div>
   );
 };

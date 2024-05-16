@@ -1,19 +1,19 @@
-import React, { ButtonHTMLAttributes } from "react";
-import { Button as MuiButton } from "@mui/material";
+import React from "react";
+import { Button as MuiButton, ButtonProps } from "@mui/material";
 import { SxProps } from "@mui/system";
 import { Theme } from "@mui/material/styles";
 
-interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface IProps extends ButtonProps {
   title: string;
   sx?: SxProps<Theme>;
   onClick?: () => void;
 }
 
 const Button: React.FC<IProps> = (props) => {
-  const { title, sx, onClick } = props;
+  const { title, sx, ...rest } = props;
   return (
     <MuiButton
-      onClick={onClick}
+      {...rest}
       sx={{
         maxWidth: { sm: "426px", xs: "355px" },
         width: "100%",

@@ -1,4 +1,5 @@
 import React from "react";
+import { Box } from "@mui/material";
 import { FaCheckCircle } from "react-icons/fa";
 import {
   AuthDescription,
@@ -8,11 +9,19 @@ import {
   SecuredText,
   TextInput,
 } from "../../../components";
+
 const ResidencyInfo: React.FC<any> = (props) => {
   return (
     <div className={"auth-container"}>
       <Header title="Bank Verification" step={3} />
-      <div className={"auth-body"}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: { lg: "0px 100px 0px 100px", md: "0px" },
+        }}
+      >
         <Heading title="Complete Your Profile!" />
         <AuthDescription title="For the purpose of industry regulation, your details are required." />
         <TextInput
@@ -26,7 +35,7 @@ const ResidencyInfo: React.FC<any> = (props) => {
           style={{ marginTop: 100 }}
         />
         <SecuredText />
-      </div>
+      </Box>
     </div>
   );
 };
