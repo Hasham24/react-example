@@ -28,6 +28,11 @@ const ResidencyInfo: React.FC<any> = (props) => {
           label="Bank verification number (BVN)"
           placeholder="Enter account number"
           Icon={<FaCheckCircle size={15} color="#08AD36" />}
+          styles={{
+            container:{
+              maxWidth: "426px",
+            }
+          }}
         />
         <Button
           title="Save & Continue"

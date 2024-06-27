@@ -50,6 +50,11 @@ const SignUP: React.FC = () => {
             id={"fullName"}
             name={"fullName"}
             placeholder={"Invictus Innocent"}
+            styles={{
+              container:{
+                maxWidth: "426px",
+              }
+            }}
           />
           <TextInput
             label={"Email address*"}
@@ -57,6 +62,11 @@ const SignUP: React.FC = () => {
             id={"email"}
             name={"email"}
             placeholder={"Enter email address"}
+            styles={{
+              container:{
+                maxWidth: "426px",
+              }
+            }}
           />
           <TextInput
             label={"Create password*"}
@@ -64,6 +74,11 @@ const SignUP: React.FC = () => {
             id={"password"}
             name={"password"}
             placeholder={"Enter Password"}
+            styles={{
+              container:{
+                maxWidth: "426px",
+              }
+            }}
           />
           <CheckBox />
           <Button type="submit" title="Register Account" />

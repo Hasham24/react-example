@@ -38,9 +38,19 @@ const ResidencyInfo: React.FC<any> = () => {
             label="Phone number"
             onChange={(val: any) => setPhoneNumber(val)}
           />
-          <TextInput label="Your address" placeholder="Please enter address" />
+          <TextInput label="Your address" placeholder="Please enter address" 
+           styles={{
+            container:{
+              maxWidth: "426px",
+            }
+          }}
+          />
           <CountrySelect label="Country of residence" />
-          <Button title="Save & Continue" type="submit" />
+          <Button title="Save & Continue" type="submit"
+          sx={{
+            marginTop:'20px'
+          }}
+          />
           <SecuredText />
         </form>
       </Box>

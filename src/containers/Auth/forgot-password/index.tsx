@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Box } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
 import {
   Button,
@@ -19,7 +20,14 @@ const ForgotPassword: React.FC = () => {
 
   return (
     <div className={"auth-container"}>
-      <div className={"auth-body"}>
+     <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: { lg: "0px 100px 0px 100px", md: "0px" },
+        }}
+      >
         <Heading title="Forgot Password?" />
         <AuthDescription title="Please enter the email you would like your password reset information sent to" />
         <form onSubmit={handleSubmit}>
@@ -29,8 +37,17 @@ const ForgotPassword: React.FC = () => {
             id={"email"}
             name={"email"}
             placeholder={"Enter email"}
+            styles={{
+              container:{
+                maxWidth: "426px",
+              }
+            }}
           />
-          <Button type="submit" title="Request Reset Link" />
+          <Button type="submit" title="Request Reset Link"
+          sx={{
+            marginTop:'20px'
+          }}
+          />
         </form>
         <OR />
         <SocialButton
@@ -42,7 +59,7 @@ const ForgotPassword: React.FC = () => {
           prefix=""
           onClick={() => navigate("/login")}
         />
-      </div>
+      </Box>
     </div>
   );
 };

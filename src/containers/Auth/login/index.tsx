@@ -39,6 +39,11 @@ const Login: React.FC = () => {
             id={"email"}
             name={"email"}
             placeholder={"invictus_innocent.309@example.com"}
+            styles={{
+              container:{
+                maxWidth: "426px",
+              }
+            }}
           />
           <TextInput
             label={"Password"}
@@ -46,6 +51,11 @@ const Login: React.FC = () => {
             id={"password"}
             name={"password"}
             placeholder={"Enter Password"}
+            styles={{
+              container:{
+                maxWidth: "426px",
+              }
+            }}
           />
           <div
             className={styles.forgotPassword}

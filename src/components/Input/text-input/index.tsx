@@ -6,16 +6,24 @@ import {
   InputAdornment,
   Typography,
   TextFieldProps,
+  SxProps,
+  Theme,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 interface IProps extends Omit<TextFieldProps, "label"> {
   label: string;
   Icon?: JSX.Element;
+  styles?: {
+    container?: SxProps<Theme>;
+    label?: SxProps<Theme>;
+    inputBox?: SxProps<Theme>;
+    textField?: SxProps<Theme>;
+  };
 }
 
 const TextInput: React.FC<IProps> = (props) => {
-  const { label, id, name, placeholder, type = "", Icon = null } = props;
+  const { label, id, name, placeholder, type = "", Icon = null, styles = {} } = props;
   const [inputType, setInputType] = useState<string>(type);
 
   const showPassword = () => {
@@ -23,10 +31,10 @@ const TextInput: React.FC<IProps> = (props) => {
   };
 
   return (
-    <Box sx={{ maxWidth: "426px", mt: 2 }}>
+    <Box sx={{ mt: 2, ...styles.container }}>
       <Typography
         component="label"
-        sx={{ fontFamily: "interMedium", fontSize: 15, color: "#696f79" }}
+        sx={{ fontFamily: "interMedium", fontSize: 15, color: "#696f79", ...styles.label }}
       >
         {label}
       </Typography>
@@ -42,6 +50,7 @@ const TextInput: React.FC<IProps> = (props) => {
             borderColor: "#1565d8",
             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.11)",
           },
+          ...styles.inputBox,
         }}
       >
         <TextField
@@ -64,7 +73,7 @@ const TextInput: React.FC<IProps> = (props) => {
               <InputAdornment position="start">{Icon}</InputAdornment>
             ),
           }}
-          sx={{ fontFamily: "inter-Medium", fontSize: 14, color: "#494949" }}
+          sx={{ fontFamily: "inter-Medium", fontSize: 14, color: "#494949", ...styles.textField }}
         />
       </Box>
     </Box>

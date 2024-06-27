@@ -1,8 +1,12 @@
 import React from "react";
-import { Box } from "@mui/material";
-import { Avatar, Button, Heading } from "../../../components";
+import { Box, useMediaQuery } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
+import { Avatar, Button, Heading, TextInput } from "../../../components";
 
 const General: React.FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
   return (
     <Box sx={{ padding: { md: "32px", xs: "20px" } }}>
       <Heading
@@ -50,7 +54,48 @@ const General: React.FC = () => {
           />
         </Box>
       </Box>
-      <Box></Box>
+      <Box
+      sx={{
+        display: "flex",
+        marginTop: "10px",
+        flexDirection: isMobile || isTablet ? 'column' : 'row',
+        justifyContent: 'space-between',
+        maxWidth: "590px",
+      }}
+    >
+      <TextInput
+        styles={{
+          container: {
+            maxWidth: isMobile || isTablet ? '100%' : '277px',
+            marginRight: isMobile || isTablet ? 0 : '20px',
+          },
+        }}
+        label={"First name"}
+        type={"text"}
+        id={"firstName"}
+        name={"firstName"}
+        placeholder={"Enter First Name"}
+      />
+      <TextInput
+        styles={{
+          container: {
+            maxWidth: isMobile || isTablet ? '100%' : '277px',
+          },
+        }}
+        label={"Last name"}
+        type={"text"}
+        id={"lastName"}
+        name={"lastName"}
+        placeholder={"Enter Last Name"}
+      />
+    </Box>
+      <TextInput
+        label={"Email"}
+        type={"text"}
+        id={"email"}
+        name={"email"}
+        placeholder={"invictus_innocent.309@example.com"}
+      />
     </Box>
   );
 };
