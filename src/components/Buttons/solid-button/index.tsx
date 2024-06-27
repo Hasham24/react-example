@@ -1,31 +1,21 @@
 import React from "react";
 import { Button as MuiButton, ButtonProps } from "@mui/material";
-import { SxProps } from "@mui/system";
-import { Theme } from "@mui/material/styles";
 
-interface IProps extends ButtonProps {
-  title: string;
-  sx?: SxProps<Theme>;
-  onClick?: () => void;
-}
-
-const Button: React.FC<IProps> = (props) => {
+const Button: React.FC<ButtonProps> = (props) => {
   const { title, sx, ...rest } = props;
   return (
     <MuiButton
-      {...rest}
       sx={{
         maxWidth: { sm: "426px", xs: "355px" },
         width: "100%",
-        marginTop: 3,
         padding: "15px 15px 15px 0px",
         borderRadius: 1,
         borderWidth: 0,
         borderColor: "#1565D8",
-        textTransform:'capitalize',  
+        textTransform: "capitalize",
         color: "#fff",
         fontSize: {
-          sm: "9px",
+          xs: "9px",
           md: "14px",
         },
         fontFamily: "interRegular",
@@ -35,6 +25,7 @@ const Button: React.FC<IProps> = (props) => {
         },
         ...sx,
       }}
+      {...rest}
     >
       {title}
     </MuiButton>

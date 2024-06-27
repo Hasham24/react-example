@@ -14,22 +14,26 @@ import { useNavigate } from "react-router-dom";
 import { SlLock } from "react-icons/sl";
 import { HiMiniSquare2Stack } from "react-icons/hi2";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
-import { Avatar } from "../../Images";
+import {Avatar} from "../../Images"; // Adjust the import according to your project structure
+
 interface Props {
   window?: () => Window;
 }
+
 const drawerWidth = 260;
+
 const DrawerComponent = (props: Props, ref: any) => {
   const { window } = props;
   const container =
     window !== undefined ? () => window().document.body : undefined;
   const navigate = useNavigate();
-  // local states
+
+  // Local states
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [isClosing, setIsClosing] = useState<boolean>(false);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
-  // list data variable
+  // List data
   const drawerData = [
     {
       title: "General",
@@ -79,7 +83,8 @@ const DrawerComponent = (props: Props, ref: any) => {
       ),
     },
   ];
-  // methods handling
+
+  // Method handling
   const handleDrawerClose = () => {
     setIsClosing(true);
     setMobileOpen(false);
@@ -88,8 +93,9 @@ const DrawerComponent = (props: Props, ref: any) => {
   const handleDrawerTransitionEnd = () => {
     setIsClosing(false);
   };
+
   useImperativeHandle(ref, () => ({
-    handleDrawerToggle: function () {
+    handleDrawerToggle: () => {
       if (!isClosing) {
         setMobileOpen(!mobileOpen);
       }
@@ -101,13 +107,13 @@ const DrawerComponent = (props: Props, ref: any) => {
     navigate(route);
   };
 
-  // drawer jsx
+  // Drawer JSX
   const drawer = (
     <Box sx={{ margin: "10px" }}>
       <Box
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
       >
-        <Avatar/>
+        <Avatar />
         <Box sx={{ marginLeft: "10px" }}>
           <Typography
             sx={{ color: "#1A194D", fontSize: "16px", fontFamily: "InterBold" }}
@@ -153,6 +159,7 @@ const DrawerComponent = (props: Props, ref: any) => {
       </List>
     </Box>
   );
+
   return (
     <Box
       component="nav"
@@ -162,6 +169,7 @@ const DrawerComponent = (props: Props, ref: any) => {
       }}
       aria-label="mailbox folders"
     >
+      {/* Temporary drawer for mobile/tablet */}
       <Drawer
         container={container}
         variant="temporary"
@@ -181,6 +189,7 @@ const DrawerComponent = (props: Props, ref: any) => {
       >
         {drawer}
       </Drawer>
+      {/* Permanent drawer for desktop */}
       <Drawer
         variant="permanent"
         sx={{
@@ -198,4 +207,5 @@ const DrawerComponent = (props: Props, ref: any) => {
     </Box>
   );
 };
+
 export default forwardRef(DrawerComponent);

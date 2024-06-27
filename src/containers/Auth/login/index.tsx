@@ -13,9 +13,10 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    localStorage.setItem("isUserLoggedIn", JSON.stringify(true));
+    localStorage.setItem("isAuthenticated", JSON.stringify(true));
     setTimeout(() => {
       navigate("/general");
+      window.location.reload(); 
     }, 100);
   };
 

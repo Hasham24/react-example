@@ -1,9 +1,8 @@
 import React from "react";
-import { Typography } from "@mui/material";
-import { IText } from "../interface";
+import { Typography, TypographyProps } from "@mui/material";
 
-const Heading: React.FC<IText> = (props) => {
-  const { title = "" } = props;
+const Heading: React.FC<TypographyProps> = (props) => {
+  const { title = "", sx } = props;
   return (
     <Typography
       sx={{
@@ -11,6 +10,7 @@ const Heading: React.FC<IText> = (props) => {
         fontFamily: "interBold",
         color: "#000000",
         textAlign: { md: "start", xs: "center" },
+        ...sx,
       }}
     >
       {title}

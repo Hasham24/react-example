@@ -1,8 +1,7 @@
 import React from "react";
-import { Typography } from "@mui/material";
-import { IText } from "../interface";
+import { Typography, TypographyProps } from "@mui/material";
 
-const AuthDescriptionText: React.FC<IText> = (props) => {
+const AuthDescriptionText: React.FC<TypographyProps> = (props) => {
   const { title = "" } = props;
   return (
     <Typography
