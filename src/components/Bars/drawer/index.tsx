@@ -37,7 +37,7 @@ const DrawerComponent = (props: Props, ref: any) => {
   const drawerData = [
     {
       title: "General",
-      route: "/",
+      route: "/settings",
       icon: (
         <HiMiniSquare2Stack
           size={28}
@@ -47,14 +47,14 @@ const DrawerComponent = (props: Props, ref: any) => {
     },
     {
       title: "Security",
-      route: "/security",
+      route: "/settings/security",
       icon: (
         <SlLock size={28} color={selectedIndex === 1 ? "#FFFFFF" : "62618F"} />
       ),
     },
     {
       title: "Notifications",
-      route: "/notifications",
+      route: "/settings/notifications",
       icon: (
         <MdOutlineEmail
           size={28}
@@ -64,7 +64,7 @@ const DrawerComponent = (props: Props, ref: any) => {
     },
     {
       title: "Billing",
-      route: "/billing",
+      route: "/settings/billing",
       icon: (
         <FaRegMoneyBillAlt
           size={28}
@@ -74,7 +74,7 @@ const DrawerComponent = (props: Props, ref: any) => {
     },
     {
       title: "Analytics",
-      route: "/analytics",
+      route: "/settings/analytics",
       icon: (
         <MdOutlineAnalytics
           size={28}
@@ -104,7 +104,8 @@ const DrawerComponent = (props: Props, ref: any) => {
 
   const drawerItemHandler = (index: number, route: string) => {
     setSelectedIndex(index);
-    navigate(route);
+    console.log(route)
+    navigate(`${route}`);
   };
 
   // Drawer JSX

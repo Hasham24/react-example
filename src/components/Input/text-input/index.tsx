@@ -4,16 +4,17 @@ import {
   TextField,
   IconButton,
   InputAdornment,
-  Typography,
   TextFieldProps,
   SxProps,
   Theme,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { Label } from "../../Texts";
 
 interface IProps extends Omit<TextFieldProps, "label"> {
   label: string;
   Icon?: JSX.Element;
+  multiline?:boolean;
   styles?: {
     container?: SxProps<Theme>;
     label?: SxProps<Theme>;
@@ -23,7 +24,7 @@ interface IProps extends Omit<TextFieldProps, "label"> {
 }
 
 const TextInput: React.FC<IProps> = (props) => {
-  const { label, id, name, placeholder, type = "", Icon = null, styles = {} } = props;
+  const { label, id, name, placeholder, type = "", Icon = null, styles = {}, multiline = false } = props;
   const [inputType, setInputType] = useState<string>(type);
 
   const showPassword = () => {
@@ -32,12 +33,7 @@ const TextInput: React.FC<IProps> = (props) => {
 
   return (
     <Box sx={{ mt: 2, ...styles.container }}>
-      <Typography
-        component="label"
-        sx={{ fontFamily: "interMedium", fontSize: 15, color: "#696f79", ...styles.label }}
-      >
-        {label}
-      </Typography>
+      <Label title={label} sx={{...styles.label}}  />
       <Box
         sx={{
           display: "flex",
@@ -60,6 +56,7 @@ const TextInput: React.FC<IProps> = (props) => {
           placeholder={placeholder}
           fullWidth
           variant="standard"
+          multiline={multiline}
           InputProps={{
             disableUnderline: true,
             endAdornment: type === "password" && (
