@@ -4,14 +4,14 @@ import { useTheme } from '@mui/material/styles';
 import { Button, Heading, TextInput } from "../../../components";
 
 
-const General: React.FC = () => {
+const Security: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
   return (
     <Box sx={{ padding: { md: "32px", xs: "20px" } }}>
       <Heading
-        title="General"
+        title="Security"
         sx={{
           fontSize: { md: "32px", xs: "20px" },
           textAlign: "start",
@@ -161,4 +161,4 @@ const General: React.FC = () => {
     </Box>
   );
 };
-export default General;
+export default Security;

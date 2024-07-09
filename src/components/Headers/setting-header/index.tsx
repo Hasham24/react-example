@@ -42,7 +42,7 @@ const SettingHeader: React.FC<Props> = (props) => {
           fontFamily: "interLight",
         }}
       >
-        {location?.pathname.replace("/", "") || "General"}
+        Settings
       </Typography>
       <Avatar sx={{ height: "28px", width: "28px", borderRadius: "14px" }} />
     </Toolbar>
